@@ -39,7 +39,7 @@ main = do
       let archive = foldl' (flip addEntryToArchive) emptyArchive entries
           archiveContents = fromArchive archive
       BL.writeFile zipFileName archiveContents
-      putStrLn $ zipFileName ++ " successfully written"
+      putStrLn $ zipFileName ++ " written"
     _ -> error $ "Executable " ++ executableName ++ " not found in " ++ cabalPath
 
 
