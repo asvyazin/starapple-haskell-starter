@@ -4,14 +4,12 @@ module Main where
 import Codec.Archive.Zip (readEntry, Entry(eRelativePath), emptyArchive, addEntryToArchive, fromArchive)
 import qualified Data.ByteString.Lazy as BL (writeFile)
 import Data.List (find, foldl')
-import Distribution.ModuleName (toFilePath)
 import qualified Distribution.ModuleName as M (main)
-import Distribution.PackageDescription (GenericPackageDescription, PackageDescription(..), Executable(..), BuildInfo(..), exeModules)
+import Distribution.PackageDescription (PackageDescription(..), Executable(..), BuildInfo(..), exeModules)
 import Distribution.PackageDescription.Configuration (flattenPackageDescription)
 import Distribution.PackageDescription.Parse (readPackageDescription)
 import Distribution.Simple.Utils (findModuleFiles)
 import Distribution.Verbosity (verbose)
-import System.Directory (doesFileExist)
 import System.FilePath ((</>))
 
 
