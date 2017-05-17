@@ -1,8 +1,8 @@
-# Haskell bot for (Starapple)[https://starapple.riddles.io]
+# Haskell bot for [Starapple](https://starapple.riddles.io)
 
 ## Prerequisites
 
-- Download (Stack)[https://docs.haskellstack.org/en/stable/README/]
+- Download [Stack](https://docs.haskellstack.org/en/stable/README/)
 - Run `stack setup` in project directory
 
 ## To build
