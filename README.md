@@ -12,3 +12,7 @@ Run `stack build`
 ## To submit
 
 Run `stack exec starapple-pack` and then submit generated file (bot.zip)
+
+## To hack
+
+Implement your bot logic in function `move` (Move.hs)
