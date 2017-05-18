@@ -18,12 +18,14 @@ executable starapple-exe
   main-is:             Main.hs
   other-modules:       Game,
                        Commands,
-                       Move
+                       Move,
+                       Random
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   build-depends:       array,
                        attoparsec,
                        base,
                        bytestring,
+                       random,
                        text
   default-language:    Haskell2010
 

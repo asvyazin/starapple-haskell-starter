@@ -10,10 +10,14 @@ import Move (move)
 import System.IO (hFlush, stdout)
 
 
+seed :: Int
+seed = 12345
+
+
 main :: IO ()
 main = do
   ls <- (map B.toStrict . B.lines) <$> B.getContents
-  gameLoop emptyGame ls
+  gameLoop (emptyGame seed) ls
   where gameLoop _ [] = pure ()
         gameLoop game (l:ls) = do
           let res = parseOnly command l
