@@ -50,6 +50,7 @@ data MoveDirection
   | MoveRight
   | MoveUp
   | MoveDown
+  | MovePass
   deriving (Eq, Ord)
 
 
@@ -58,6 +59,7 @@ instance Show MoveDirection where
   show MoveRight = "right"
   show MoveUp = "up"
   show MoveDown = "down"
+  show MovePass = "no_moves"
 
 
 command :: Parser Command

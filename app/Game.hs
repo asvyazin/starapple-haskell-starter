@@ -6,14 +6,12 @@ import Data.Array (Array, listArray, bounds, (!), assocs)
 import Data.List (find)
 import Data.Maybe (fromJust)
 import Data.Text (Text, empty)
-import System.Random (mkStdGen, RandomGen(..), StdGen)
 
 
 data Game
      = Game
      { gameSettings :: GameSettings
      , gameState :: GameState
-     , gameRnd :: StdGen
      } deriving (Show)
 
 
@@ -42,20 +40,11 @@ data GameState
      } deriving (Show)
 
 
-emptyGame :: Int -> Game
-emptyGame seed = Game emptySettings emptyState $ mkStdGen seed
+emptyGame :: Game
+emptyGame = Game emptySettings emptyState
   where emptySettings = GameSettings 0 0 [] empty 0 0 0
         emptyState = GameState 0 emptyField
         emptyField = listArray ((0, 0), (0, 0)) []
-
-
-instance RandomGen Game where
-         next g =
-           let (i, newRnd) = next (gameRnd g)
-           in (i, g { gameRnd = newRnd })
-         split g =
-           let (rnd1, rnd2) = split (gameRnd g)
-           in (g { gameRnd = rnd1 }, g { gameRnd = rnd2 })
 
 
 getNeighbours :: Field -> (Int, Int) -> [(MoveDirection, (Int, Int))]
